@@ -69,7 +69,7 @@ while True:
             else:
                 print("No hay productos agotados.") 
         case "5":
-            print("Muchas gracias por usar mi sistema de reserva.")
+            print("Muchas gracias por usar mi sistema de inventario.")
             break
         case _:
             print("No existe la opción ingresada")
