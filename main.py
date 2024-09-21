@@ -24,14 +24,28 @@ while True:
         case "1":
             nombre = input("Ingrese el nombre del producto: ")
             categoria = input("Ingrese la categoría del producto: ")
-            stock = int(input("Ingrese la cantidad en stock: "))
+            while True:
+                try:
+                    stock = int(input("Ingrese la cantidad en stock: "))
+                    break
+                except ValueError:
+                    # Imprime error
+                    print("El número de stock no es válido. ")
+            
             nuevo_producto = Producto(nombre, categoria, stock)
             agregar_producto(inventario,nuevo_producto)
             guardar_inventario(inventario)
             print(f"Producto '{nombre}' ingresado correctamente.")     
         case "2":
             nombre = input("Ingrese el nombre del producto a actualizar: ")
-            cantidad = int(input("Ingrese la nueva cantidad en stock: "))
+            while True:
+                try:
+                    cantidad = int(input("Ingrese la nueva cantidad en stock: "))
+                    break
+                except ValueError:
+                    # Imprime error
+                    print("El número de stock no es válido. ") 
+                    
             resultado = actualizar_stock(inventario, nombre, cantidad)
             guardar_inventario(inventario)
             if resultado:
